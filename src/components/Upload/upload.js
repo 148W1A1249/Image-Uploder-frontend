@@ -34,7 +34,7 @@ function Upload() {
     const UploadImage= (files)=>{
         files.map(async(obj)=>{
             try {
-                await fetch('/api/upload',{
+                await fetch('https://image-uploader-myself-beaware.herokuapp.com/api/upload',{
                     method:"POST",
                     body: JSON.stringify({data: obj}),
                     headers: {'Content-type': "application/json"}
