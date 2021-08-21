@@ -5,7 +5,7 @@ function Galary() {
     const [ImageIds, setImageIds] = useState()
     const loadImages = async()=>{
         try {
-            const res = await fetch("https://image-uploader-myself-beaware.herokuapp.com/api/images");
+            const res = await fetch("/api/images");
             const data=await res.json();
             setImageIds(data);
         } catch (error) {
