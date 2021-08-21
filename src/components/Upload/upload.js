@@ -2,8 +2,6 @@ import React, { useState }  from 'react';
 
 function Upload() {
 
-    // const [fileInputState, setfileInputState] = useState('')
-    // const [selectdFile, setselectdFile] = useState('');
     const [previewSource, setpreviewSource] = useState([]);
 
     const handleFilesInputChange =(e)=>{
@@ -45,7 +43,7 @@ function Upload() {
                 console.error(error)
             }
         })
-        window.location.reload();
+        setTimeout(() => {window.location.reload()}, 4000);
     }
 
   return <>
@@ -55,7 +53,7 @@ function Upload() {
             <span>Upload/Home</span>
             <form onSubmit={handleSubmit} className="mt-3">
                 {/* <input type="file" multiple /> */}
-                <input type="file" name="image" onChange={handleFilesInputChange}  className="form-control mb-1" multiple />
+                <input type="file" name="image" onChange={handleFilesInputChange}  className="form-control mb-3" multiple />
                 {/* <input type="file" name="image" onChange={handleFilesInputChange} value={fileInputState} className="form-input" multiple /> */}
                 {/* <button onClick={handleSubmit} disabled={previewSource.length===0 ? true:false } className="btn btn-info m-md-0 m-2" type="submit">Submit</button> */}
                 <button className="btn btn-info m-md-0 m-2" type="submit">Submit</button>
